@@ -262,15 +262,23 @@ nav ul li a:hover {
 
 /* TESTIMONIOS */
 blockquote.card {
-  font-style: italic;
+  font-style: normal;              /* no cursiva */
+  font-weight: 300;                /* Texto más liviano */
   border-left: 5px solid var(--turquesa);
-  padding-left: 1rem;
+  padding: 20px;                   /* ya incluía 20px en tu otro estilo */
   color: var(--violeofundo);
   background: #f9f9f9;
   border-radius: var(--border-radius);
   box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  margin: 0;                       /* para que no agregue margen raro */
   transition: transform 0.3s ease;
 }
+
+blockquote.card:hover {
+  transform: translateY(-5px);
+}
+
+
 
 blockquote.card:hover {
   transform: translateY(-5px);
@@ -336,4 +344,33 @@ form button {
   .card-hero {
     margin: 2rem auto 0;
   }
+}
+
+/* JS */
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+nav ul.open {
+  display: block;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.btn-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--violeta);
+  color: var(--blanco);
+  border: none;
+  padding: 12px 16px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
